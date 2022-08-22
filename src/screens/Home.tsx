@@ -1,8 +1,11 @@
 
 const Home = () => {
-  
+  // order table
+  // add
+  // delete
+  // edit
   return <div>
-    hello home!
+    Hello
   </div>
 }
 
