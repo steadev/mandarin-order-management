@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import styles from './OrderList.module.css';
 
-const Home = () => {
+const OrderList = () => {
   const columns = ['id', '이름', '연락처', '주소', '주문내용', '금액', '배송여부'];
+  const navigate = useNavigate();
+
   const data = [
     { id: 1, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 1', amount: 10000, delivered: true },
     { id: 2, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 2', amount: 20000, delivered: true },
@@ -11,18 +15,22 @@ const Home = () => {
   // add
   // delete
   // edit
-  return <div>
-    <table>
-      <thead>
+  const handleOnClick = (index: number) => {
+    console.log(index);
+    navigate(`/order/${index}`) 
+  }
+  return <div className={styles.container}>
+    <table className={styles.table}>
+      <thead className={styles.thead}>
         <tr>
           {columns.map((column) => (
             <th key={column}>{column}</th>
           ))}
         </tr>
       </thead>
-      <tbody>
-        {data.map(({ id, name, phone, address, order, amount, delivered }) => (
-          <tr key={id}>
+      <tbody className={styles.tbody}>
+        {data.map(({ id, name, phone, address, order, amount, delivered }, index) => (
+          <tr key={id} onClick={() => handleOnClick(index)} className={styles.row}>
             <td>{id}</td>
             <td>{name}</td>
             <td>{phone}</td>
@@ -37,4 +45,4 @@ const Home = () => {
   </div>
 }
 
-export default Home;
+export default OrderList;

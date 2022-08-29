@@ -1,18 +1,14 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Home from './screens/Home';
-import OrderDetail from './screens/OrderDetail';
-import Statistics from './screens/Statistics';
+import Header from './components/Header/Header';
+import MainNavigator from './navigations/MainNavigator';
 
 function App() {
   
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/order/*" element={<OrderDetail />}></Route>
-        <Route path="/stats" element={<Statistics />}></Route>
-      </Routes>
+      <Header />
+      <MainNavigator />
     </BrowserRouter>
   );
 }
