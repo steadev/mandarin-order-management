@@ -2,14 +2,14 @@ import { useNavigate } from "react-router-dom";
 import styles from './OrderList.module.css';
 
 const OrderList = () => {
-  const columns = ['id', '이름', '연락처', '주소', '주문내용', '금액', '배송여부'];
+  const columns = ['id', '이름', '연락처', '주소', '주문내용', '금액', '결제완료', '배송여부'];
   const navigate = useNavigate();
 
   const data = [
-    { id: 1, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 1', amount: 10000, delivered: true },
-    { id: 2, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 2', amount: 20000, delivered: true },
-    { id: 3, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 3', amount: 30000, delivered: true },
-    { id: 4, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 4', amount: 40000, delivered: true }
+    { id: 1, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 1', amount: 10000, paid: true, delivered: true },
+    { id: 2, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 2', amount: 20000, paid: true, delivered: true },
+    { id: 3, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 3', amount: 30000, paid: true, delivered: true },
+    { id: 4, name: '이명주', phone: '01029541187', address: '경기도 파주시 교하로 100', order: '감귤 4', amount: 40000, paid: true, delivered: true }
   ]
   // order table
   // add
