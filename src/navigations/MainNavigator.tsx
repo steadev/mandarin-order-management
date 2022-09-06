@@ -4,7 +4,6 @@ import OrderList from '../screens/OrderList/OrderList';
 import Statistics from '../screens/Statistics/Statistics';
 
 const MainNavigator = () => {
-
   return (
     <Routes>
       <Route path="/" element={<OrderList />}></Route>
