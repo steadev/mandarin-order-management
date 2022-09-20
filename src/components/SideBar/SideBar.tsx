@@ -1,7 +1,6 @@
 import {
   faChartBar,
   faHomeAlt,
-  faRedoAlt,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,12 +22,16 @@ const SideBar = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.relaod}>
-        <FontAwesomeIcon icon={faRedoAlt} />
+      <div className={styles.storeName}>
+        범수네
+        <br />
+        농장
       </div>
-      <div className={styles.menu}>
+      <div className={styles.menuContainer}>
         {menus.map((menu) => (
-          <FontAwesomeIcon icon={menu.icon} />
+          <div className={styles.menu}>
+            <FontAwesomeIcon icon={menu.icon} />
+          </div>
         ))}
       </div>
     </div>
