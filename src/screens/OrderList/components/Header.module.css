@@ -1,0 +1,33 @@
+.container {
+  padding: 20px 0 16px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.buttonListWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #ededed;
+}
+.button ~ .button {
+  margin-left: 8px;
+}
+
+.addButton {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: #34dca1;
+  border: 1px solid #4fb594;
+  margin-left: 12px;
+}
