@@ -2,10 +2,11 @@
   padding: 20px 0 16px;
   display: flex;
   align-items: flex-end;
+  border-bottom: 1px solid #f3f3f4;
 }
 
 .title {
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .buttonListWrapper {
@@ -22,6 +23,9 @@
 }
 .button ~ .button {
   margin-left: 8px;
+}
+.icon {
+  margin-right: 8px;
 }
 
 .addButton {
