@@ -1,7 +1,7 @@
-import Header from './components/Header'
-import OrderTable from './components/OrderTable'
-import SearchBar from './components/SearchBar'
-import SortingTab from './components/SortingTab'
+import Header from './components/Header/Header'
+import OrderTable from './components/OrderTable/OrderTable'
+import SearchBar from './components/SearchBar/SearchBar'
+import SortingTab from './components/SortingTab/SortingTab'
 import styles from './OrderList.module.css'
 
 const OrderList = () => {

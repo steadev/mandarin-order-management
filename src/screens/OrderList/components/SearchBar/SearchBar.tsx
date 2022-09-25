@@ -1,6 +1,7 @@
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import SelectBox from '../SelectBox/SelectBox'
 import styles from './SearchBar.module.css'
 
 const SearchBar = () => {
@@ -13,8 +14,7 @@ const SearchBar = () => {
   return (
     <div className={styles.container}>
       <input></input>
-      <select></select>
-      <Calendar onChange={onChagneDateRange} selectRange={true} />
+      <SelectBox icon={faCalendar} type='date' onChange={onChagneDateRange} />
     </div>
   )
 }
