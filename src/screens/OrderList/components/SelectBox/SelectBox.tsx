@@ -1,34 +1,25 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
-import Calendar from 'react-calendar'
+import { PropsWithChildren } from 'react'
 import styles from './SelectBox.module.css'
 
-type SelectBoxProps<T> = {
+export type SelectBoxProps<T> = {
   icon: IconDefinition
-  type: 'date' | 'select'
-  options?: string[]
   onChange: (value: T) => void
+  onClick: () => void
 }
 
 const SelectBox = ({
   icon,
-  type,
-  options,
   onChange,
-}: SelectBoxProps<Date[] | string>) => {
-  const [toggle, setToggle] = useState(false)
-  const onChagneDateRange = (dateRange: Date[]) => {
-    onChange(dateRange)
-  }
-
+  onClick,
+  children,
+}: PropsWithChildren<SelectBoxProps<any>>) => {
   return (
-    <div className={styles.container} onClick={() => setToggle(!toggle)}>
+    <div className={styles.container} onClick={onClick}>
       <FontAwesomeIcon icon={icon} />
-      {toggle && type === 'date' && (
-        <Calendar onChange={onChagneDateRange} selectRange={true} />
-      )}
+      {children}
       <FontAwesomeIcon icon={faAngleDown} className={styles.arrow} />
     </div>
   )
