@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import SelectBox, { SelectBoxProps } from './SelectBox'
-
-type OptionSelectBoxProps = Omit<SelectBoxProps<number>, 'onClick'> & {
-  options: {
-    id: number
-    value: string
-  }
+export type OptionValue = {
+  id: number
+  value: string
 }
 
-const OptionSelectBox = ({ icon, onChange }: OptionSelectBoxProps) => {
+type OptionSelectBoxProps = Omit<SelectBoxProps<OptionValue>, 'onClick'> & {
+  options: OptionValue[]
+}
+
+const OptionSelectBox = ({ icon, options, onChange }: OptionSelectBoxProps) => {
   const [toggle, setToggle] = useState<boolean>(false)
 
   return (

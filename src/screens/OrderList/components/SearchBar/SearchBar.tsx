@@ -1,7 +1,8 @@
-import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faTag } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import 'react-calendar/dist/Calendar.css'
 import DateSelectBox from '../SelectBox/DateSelectBox'
+import OptionSelectBox, { OptionValue } from '../SelectBox/OptionSelectBox'
 import styles from './SearchBar.module.css'
 
 const SearchBar = () => {
@@ -11,11 +12,15 @@ const SearchBar = () => {
     setDateRange(value)
   }
 
+  const onChangeStatus = (value: OptionValue) => {
+    console.log(value)
+  }
+
   return (
     <div className={styles.container}>
       <input></input>
       <DateSelectBox icon={faCalendar} onChange={onChangeDateRange} />
-      {/* <OptionSelectBox icon={faCalendar} options={[]} onChange={} /> */}
+      <OptionSelectBox icon={faTag} options={[]} onChange={onChangeStatus} />
     </div>
   )
 }
