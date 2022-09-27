@@ -7,6 +7,11 @@ import styles from './SearchBar.module.css'
 
 const SearchBar = () => {
   const [dateRange, setDateRange] = useState<Date[]>([])
+  const statusOptions = [
+    { id: 1, value: '결제완료' },
+    { id: 2, value: '배송완료' },
+    { id: 3, value: '미결제' },
+  ]
 
   const onChangeDateRange = (value: Date[]) => {
     setDateRange(value)
@@ -20,7 +25,11 @@ const SearchBar = () => {
     <div className={styles.container}>
       <input></input>
       <DateSelectBox icon={faCalendar} onChange={onChangeDateRange} />
-      <OptionSelectBox icon={faTag} options={[]} onChange={onChangeStatus} />
+      <OptionSelectBox
+        icon={faTag}
+        options={statusOptions}
+        onChange={onChangeStatus}
+      />
     </div>
   )
 }
